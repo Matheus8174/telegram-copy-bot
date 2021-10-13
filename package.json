@@ -1,28 +1,32 @@
 {
   "name": "copy-messages-telegram-bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "A bot that copy messsage from a contact/user to a group",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node src/index.ts",
+    "dev:watch": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/index.ts"
   },
-  "keywords": [],
+  "keywords": ["telegram", "bot"],
   "author": "Matheus Santos Araujo da Silva <souzamatheus8174@gmail.com>",
   "license": "MiT",
   "devDependencies": {
+    "@types/node": "^16.10.3",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "prettier": "^2.4.1"
+    "prettier": "^2.4.1",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.4.3"
   },
   "dependencies": {
-    "telegraf": "^4.4.2",
-    "telegram": "^1.9.6",
-    "typescript": "^4.4.3"
+    "dotenv": "^10.0.0",
+    "telegram": "^1.9.6"
   }
 }
