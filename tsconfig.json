@@ -101,7 +101,6 @@
     "./src"
   ],
   "exclude": [
-    "**/*.json",
     "dist",
     "build"
   ]
