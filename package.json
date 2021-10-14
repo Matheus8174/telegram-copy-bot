@@ -4,6 +4,8 @@
   "description": "A bot that copy messsage from a contact/user to a group",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js",
     "dev": "ts-node src/index.ts",
     "dev:watch": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/index.ts"
   },
@@ -28,5 +30,15 @@
   "dependencies": {
     "dotenv": "^10.0.0",
     "telegram": "^1.9.6"
+  },
+  "bin": "./build/index.js",
+  "pkg": {
+    "assets": "./build/backend/modules/telegramApi/vars/**",
+    "targets": [
+      "node14-linux",
+      "node14-win"
+    ],
+    "outputPath": "dist",
+    "scripts": "build/**/*.js"
   }
 }
