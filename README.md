@@ -8,7 +8,7 @@
 
 ### features
 
-[x] pegar mensagens do bot CornerProBot
-[x] checar se essa mensagem é nova
-[x] criar logica pra se essa mensagem for nova mandar ela para o grupo e escrever arquivo
-[x] mandar essas mensagens para Estagiário da Bet
+- [x] pegar mensagens do bot CornerProBot
+- [x] checar se essa mensagem é nova
+- [x] criar logica pra se essa mensagem for nova mandar ela para o grupo e escrever arquivo
+- [x] mandar essas mensagens para Estagiário da Bet
