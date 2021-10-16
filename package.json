@@ -9,7 +9,10 @@
     "dev": "ts-node src/index.ts",
     "dev:watch": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/index.ts"
   },
-  "keywords": ["telegram", "bot"],
+  "keywords": [
+    "telegram",
+    "bot"
+  ],
   "author": "Matheus Santos Araujo da Silva <souzamatheus8174@gmail.com>",
   "license": "MiT",
   "devDependencies": {
