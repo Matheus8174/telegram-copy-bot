@@ -1,11 +1,11 @@
 import { resolve as resolvePath } from 'path';
 import { writeFile } from 'fs';
 
-function writeMessageFile(message: string) {
+function writeMessageFile(message: string, index: number) {
   return new Promise((resolve, reject) => {
     try {
       writeFile(
-        resolvePath(__dirname, '../', 'vars/currentMessage.txt'),
+        resolvePath(__dirname, '../', `vars/${index}Message.txt`),
         message,
         {},
         (error) => {
