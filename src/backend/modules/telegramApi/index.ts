@@ -25,20 +25,21 @@ type ErrorMessage = {
   console.log('You should now be connected.');
 
   async function execute() {
-    const newMessage = await getMessage(client, '@CornerProLiveTipsBot');
+    const newMessages = await getMessage(client, '@CornerProLiveTipsBot');
 
-    const isThisMessageNew =
-      (await readMessageFile()).toString().trim() ==
-      newMessage[0].message?.trim();
+    const oldMessages: string[] = [];
 
-    if (!isThisMessageNew) {
-      await sendMessageToGroup(newMessage[0].message?.trim() as string, client);
-      console.log('mensagem enviada!');
-      await writeMessageFile(newMessage[0].message?.trim() as string);
-      setTimeout(() => execute(), 60000);
-    } else {
-      setTimeout(() => execute(), 60000);
-    }
+    newMessages.reverse().forEach(async (message, _index) => {
+      for (let index = 0; index < 5; index++) {
+        oldMessages.push((await readMessageFile(index)).toString().trim());
+      }
+
+      if (!oldMessages.find((value) => message === value))
+        await sendMessageToGroup(message?.trim() as string, client);
+
+      await writeMessageFile(message?.trim() as string, _index);
+    });
+    setTimeout(() => execute(), 60000);
   }
 
   try {
